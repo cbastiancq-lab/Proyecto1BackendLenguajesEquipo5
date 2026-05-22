@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Proyecto1BackendLenguajesEquipo5Application<Proyecto1BackendLenguajesEquipo5>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ecommerce.Proyecto1BackendLenguajesEquipo5.Proyecto1BackendLenguajesEquipo5Application",
+            "projectName": "Proyecto1BackendLenguajesEquipo5",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
