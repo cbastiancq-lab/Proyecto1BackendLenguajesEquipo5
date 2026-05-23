@@ -9,40 +9,39 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "products")
+@Table(name = "addresses")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, length = 160)
-	private String name;
-
-	@Column(length = 1000)
-	private String description;
-
-	@Column(nullable = false, precision = 12, scale = 2)
-	private BigDecimal price;
-
-	@Column(nullable = false)
-	private Integer stock;
-
-	@Column(nullable = false)
-	private boolean active = true;
-
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id")
-	private ProductCategory category;
+	@JoinColumn(name = "user_id", nullable = false)
+	private User user;
+
+	@Column(nullable = false, length = 80)
+	private String province;
+
+	@Column(nullable = false, length = 80)
+	private String city;
+
+	@Column(length = 120)
+	private String district;
+
+	@Column(nullable = false, length = 300)
+	private String details;
+
+	@Column(nullable = false)
+	private boolean mainAddress = false;
 }

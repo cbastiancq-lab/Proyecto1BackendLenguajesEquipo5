@@ -2,47 +2,36 @@ package com.ecommerce.proyecto.data.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "products")
+@Table(name = "product_categories")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class ProductCategory {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, length = 160)
+	@Column(nullable = false, unique = true, length = 120)
 	private String name;
 
-	@Column(length = 1000)
+	@Column(length = 500)
 	private String description;
 
-	@Column(nullable = false, precision = 12, scale = 2)
-	private BigDecimal price;
-
-	@Column(nullable = false)
-	private Integer stock;
-
-	@Column(nullable = false)
-	private boolean active = true;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id")
-	private ProductCategory category;
+	@OneToMany(mappedBy = "category")
+	private Set<Product> products = new HashSet<>();
 }

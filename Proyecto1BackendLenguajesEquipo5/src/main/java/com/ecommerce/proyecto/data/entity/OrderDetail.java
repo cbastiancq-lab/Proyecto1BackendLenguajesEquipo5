@@ -16,33 +16,31 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "products")
+@Table(name = "order_details")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class OrderDetail {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, length = 160)
-	private String name;
-
-	@Column(length = 1000)
-	private String description;
-
-	@Column(nullable = false, precision = 12, scale = 2)
-	private BigDecimal price;
-
-	@Column(nullable = false)
-	private Integer stock;
-
-	@Column(nullable = false)
-	private boolean active = true;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "order_id", nullable = false)
+	private Order order;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id")
-	private ProductCategory category;
+	@JoinColumn(name = "product_id", nullable = false)
+	private Product product;
+
+	@Column(nullable = false)
+	private Integer quantity;
+
+	@Column(nullable = false, precision = 12, scale = 2)
+	private BigDecimal unitPrice;
+
+	@Column(nullable = false, precision = 12, scale = 2)
+	private BigDecimal subtotal;
 }
