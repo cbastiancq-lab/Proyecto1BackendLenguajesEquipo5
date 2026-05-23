@@ -1,6 +1,6 @@
-package com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository;
+package com.ecommerce.proyecto.data.repository;
 
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.Order;
+import com.ecommerce.proyecto.data.entity.Order;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

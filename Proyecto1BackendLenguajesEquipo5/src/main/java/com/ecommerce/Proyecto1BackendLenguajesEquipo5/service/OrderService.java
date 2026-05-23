@@ -2,11 +2,11 @@ package com.ecommerce.Proyecto1BackendLenguajesEquipo5.service;
 
 import com.ecommerce.Proyecto1BackendLenguajesEquipo5.dto.OrderDto;
 import com.ecommerce.Proyecto1BackendLenguajesEquipo5.dto.OrderRequest;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.Order;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.OrderStatus;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.User;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository.OrderRepository;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository.UserRepository;
+import com.ecommerce.proyecto.data.entity.Order;
+import com.ecommerce.proyecto.domain.enums.OrderStatus;
+import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.data.repository.OrderRepository;
+import com.ecommerce.proyecto.data.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;

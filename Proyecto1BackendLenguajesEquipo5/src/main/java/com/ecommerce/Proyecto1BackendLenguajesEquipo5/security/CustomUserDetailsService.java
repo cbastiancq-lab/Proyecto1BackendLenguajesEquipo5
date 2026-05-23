@@ -1,7 +1,7 @@
 package com.ecommerce.Proyecto1BackendLenguajesEquipo5.security;
 
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.User;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository.UserRepository;
+import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.data.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

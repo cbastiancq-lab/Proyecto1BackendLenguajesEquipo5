@@ -1,7 +1,7 @@
-package com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository;
+package com.ecommerce.proyecto.data.repository;
 
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.Role;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.RoleName;
+import com.ecommerce.proyecto.data.entity.Role;
+import com.ecommerce.proyecto.domain.enums.RoleName;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -2,10 +2,10 @@ package com.ecommerce.Proyecto1BackendLenguajesEquipo5.service;
 
 import com.ecommerce.Proyecto1BackendLenguajesEquipo5.dto.CartDto;
 import com.ecommerce.Proyecto1BackendLenguajesEquipo5.dto.CartRequest;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.Cart;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.User;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository.CartRepository;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository.UserRepository;
+import com.ecommerce.proyecto.data.entity.Cart;
+import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.data.repository.CartRepository;
+import com.ecommerce.proyecto.data.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;

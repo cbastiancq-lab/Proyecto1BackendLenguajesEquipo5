@@ -1,4 +1,4 @@
-package com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity;
+package com.ecommerce.proyecto.data.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

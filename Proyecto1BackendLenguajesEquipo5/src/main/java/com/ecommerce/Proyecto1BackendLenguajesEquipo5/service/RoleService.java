@@ -2,9 +2,9 @@ package com.ecommerce.Proyecto1BackendLenguajesEquipo5.service;
 
 import com.ecommerce.Proyecto1BackendLenguajesEquipo5.dto.RoleDto;
 import com.ecommerce.Proyecto1BackendLenguajesEquipo5.dto.RoleRequest;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.Role;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.RoleName;
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository.RoleRepository;
+import com.ecommerce.proyecto.data.entity.Role;
+import com.ecommerce.proyecto.domain.enums.RoleName;
+import com.ecommerce.proyecto.data.repository.RoleRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;

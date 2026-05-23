@@ -1,6 +1,6 @@
-package com.ecommerce.Proyecto1BackendLenguajesEquipo5.repository;
+package com.ecommerce.proyecto.data.repository;
 
-import com.ecommerce.Proyecto1BackendLenguajesEquipo5.entity.Product;
+import com.ecommerce.proyecto.data.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
