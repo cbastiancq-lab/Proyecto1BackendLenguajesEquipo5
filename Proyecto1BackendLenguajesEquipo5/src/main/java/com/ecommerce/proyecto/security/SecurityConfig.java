@@ -6,7 +6,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,20 +26,31 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		return http
-				.cors(cors -> cors.configurationSource(corsConfigurationSource))
-				.csrf(AbstractHttpConfigurer::disable)
-				.authorizeHttpRequests(auth -> auth
-						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-						.requestMatchers("/api/auth/**").permitAll()
-						.requestMatchers(HttpMethod.GET, "/api/products/**", "/api/categories/**").permitAll()
-						.anyRequest().authenticated()
-				)
-				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-				.formLogin(AbstractHttpConfigurer::disable)
-				.httpBasic(AbstractHttpConfigurer::disable)
-				.build();
+		http
+			.cors(cors -> cors.configurationSource(corsConfigurationSource))
+			.csrf(csrf -> csrf.disable())
+			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+			.authorizeHttpRequests(auth -> auth
+				.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+				.requestMatchers("/api/auth/login").permitAll()
+				.requestMatchers("/api/auth/register").permitAll()
+				.requestMatchers("/api/auth/**").permitAll()
+				.requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
+				.requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
+				.anyRequest().authenticated()
+			)
+			.formLogin(formLogin -> formLogin.disable())
+			.httpBasic(basic -> basic.disable())
+			.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+			.exceptionHandling(exception -> exception
+				.authenticationEntryPoint((request, response, authException) -> {
+					response.setStatus(401);
+					response.setContentType("application/json");
+					response.getWriter().write("{\"error\": \"Unauthorized\"}");
+				})
+			);
+
+		return http.build();
 	}
 
 	@Bean
