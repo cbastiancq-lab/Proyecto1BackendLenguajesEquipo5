@@ -40,13 +40,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String servletPath = request.getServletPath();
 
+        System.out.println("=== JWT FILTER ===");
+        System.out.println("PATH: " + servletPath);
+
         if (servletPath.startsWith("/api/auth")) {
             filterChain.doFilter(request, response);
             return;
         }
 
         try {
+
             String authHeader = request.getHeader("Authorization");
+
+            System.out.println("HEADER: " + authHeader);
 
             if (authHeader == null || !authHeader.startsWith(BEARER_PREFIX)) {
                 filterChain.doFilter(request, response);
@@ -54,17 +60,23 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
 
             String token = authHeader.substring(BEARER_PREFIX.length());
+
+            System.out.println("TOKEN: " + token);
+
             String username = jwtService.extractUsername(token);
+
+            System.out.println("USERNAME: " + username);
 
             if (username != null
                     && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                UserDetails userDetails
+                        = userDetailsService.loadUserByUsername(username);
 
                 if (jwtService.isTokenValid(token, userDetails)) {
 
-                    UsernamePasswordAuthenticationToken authToken =
-                            UsernamePasswordAuthenticationToken.authenticated(
+                    UsernamePasswordAuthenticationToken authToken
+                            = UsernamePasswordAuthenticationToken.authenticated(
                                     userDetails,
                                     null,
                                     userDetails.getAuthorities()
@@ -77,10 +89,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                     SecurityContextHolder.getContext()
                             .setAuthentication(authToken);
+
+                    System.out.println("AUTH OK");
                 }
             }
 
         } catch (Exception ex) {
+
+            System.out.println("ERROR JWT:");
+            ex.printStackTrace();
+
             SecurityContextHolder.clearContext();
         }
 
