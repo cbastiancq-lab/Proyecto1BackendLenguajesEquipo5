@@ -1,4 +1,4 @@
-package com.ecommerce.proyecto.data.entity;
+package com.ecommerce.proyecto.domain.model;
 
 import com.ecommerce.proyecto.domain.enums.OrderStatus;
 import jakarta.persistence.Column;

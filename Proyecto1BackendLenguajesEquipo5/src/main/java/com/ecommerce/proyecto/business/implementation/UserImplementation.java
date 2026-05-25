@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ecommerce.proyecto.business.service.UserService;
-import com.ecommerce.proyecto.data.entity.Role;
-import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.domain.model.Role;
+import com.ecommerce.proyecto.domain.model.User;
 import com.ecommerce.proyecto.data.repository.RoleRepository;
 import com.ecommerce.proyecto.data.repository.UserRepository;
 import com.ecommerce.proyecto.domain.dto.UserDto;

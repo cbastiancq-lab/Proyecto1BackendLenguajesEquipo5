@@ -1,6 +1,6 @@
 package com.ecommerce.proyecto.security;
 
-import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.domain.model.User;
 import com.ecommerce.proyecto.data.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

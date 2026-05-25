@@ -1,10 +1,10 @@
 package com.ecommerce.proyecto.business.implementation;
 
 import com.ecommerce.proyecto.business.service.OrderService;
-import com.ecommerce.proyecto.data.entity.Order;
-import com.ecommerce.proyecto.data.entity.OrderDetail;
-import com.ecommerce.proyecto.data.entity.Product;
-import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.domain.model.Order;
+import com.ecommerce.proyecto.domain.model.OrderDetail;
+import com.ecommerce.proyecto.domain.model.Product;
+import com.ecommerce.proyecto.domain.model.User;
 import com.ecommerce.proyecto.data.repository.OrderRepository;
 import com.ecommerce.proyecto.data.repository.ProductRepository;
 import com.ecommerce.proyecto.data.repository.UserRepository;

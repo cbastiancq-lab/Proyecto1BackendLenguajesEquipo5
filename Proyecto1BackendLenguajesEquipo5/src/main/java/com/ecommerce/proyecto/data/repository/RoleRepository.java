@@ -1,6 +1,6 @@
 package com.ecommerce.proyecto.data.repository;
 
-import com.ecommerce.proyecto.data.entity.Role;
+import com.ecommerce.proyecto.domain.model.Role;
 import com.ecommerce.proyecto.domain.enums.RoleName;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

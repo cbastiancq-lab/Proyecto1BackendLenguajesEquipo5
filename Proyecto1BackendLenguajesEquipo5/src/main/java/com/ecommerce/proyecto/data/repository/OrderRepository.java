@@ -1,6 +1,6 @@
 package com.ecommerce.proyecto.data.repository;
 
-import com.ecommerce.proyecto.data.entity.Order;
+import com.ecommerce.proyecto.domain.model.Order;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

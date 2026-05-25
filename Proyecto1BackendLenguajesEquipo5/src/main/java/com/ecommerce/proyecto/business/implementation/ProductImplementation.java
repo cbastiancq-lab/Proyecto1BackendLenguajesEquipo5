@@ -1,8 +1,8 @@
 package com.ecommerce.proyecto.business.implementation;
 
 import com.ecommerce.proyecto.business.service.ProductService;
-import com.ecommerce.proyecto.data.entity.Product;
-import com.ecommerce.proyecto.data.entity.ProductCategory;
+import com.ecommerce.proyecto.domain.model.Product;
+import com.ecommerce.proyecto.domain.model.ProductCategory;
 import com.ecommerce.proyecto.data.repository.ProductCategoryRepository;
 import com.ecommerce.proyecto.data.repository.ProductRepository;
 import com.ecommerce.proyecto.domain.dto.ProductDto;

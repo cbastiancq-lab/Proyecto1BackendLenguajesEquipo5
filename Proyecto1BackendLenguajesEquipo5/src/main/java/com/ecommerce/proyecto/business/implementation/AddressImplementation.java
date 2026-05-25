@@ -1,8 +1,8 @@
 package com.ecommerce.proyecto.business.implementation;
 
 import com.ecommerce.proyecto.business.service.AddressService;
-import com.ecommerce.proyecto.data.entity.Address;
-import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.domain.model.Address;
+import com.ecommerce.proyecto.domain.model.User;
 import com.ecommerce.proyecto.data.repository.AddressRepository;
 import com.ecommerce.proyecto.data.repository.UserRepository;
 import com.ecommerce.proyecto.domain.dto.AddressDto;

@@ -1,8 +1,8 @@
 package com.ecommerce.proyecto.business.implementation;
 
 import com.ecommerce.proyecto.business.service.ContactInformationService;
-import com.ecommerce.proyecto.data.entity.ContactInformation;
-import com.ecommerce.proyecto.data.entity.User;
+import com.ecommerce.proyecto.domain.model.ContactInformation;
+import com.ecommerce.proyecto.domain.model.User;
 import com.ecommerce.proyecto.data.repository.ContactInformationRepository;
 import com.ecommerce.proyecto.data.repository.UserRepository;
 import com.ecommerce.proyecto.domain.dto.ContactInformationDto;

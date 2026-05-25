@@ -1,7 +1,7 @@
 package com.ecommerce.proyecto.business.implementation;
 
 import com.ecommerce.proyecto.business.service.RoleService;
-import com.ecommerce.proyecto.data.entity.Role;
+import com.ecommerce.proyecto.domain.model.Role;
 import com.ecommerce.proyecto.data.repository.RoleRepository;
 import com.ecommerce.proyecto.domain.dto.RoleDto;
 import com.ecommerce.proyecto.domain.enums.RoleName;
